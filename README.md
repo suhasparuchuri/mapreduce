@@ -1,6 +1,6 @@
-# MapReduce 
+# MapReduce Data Processing
 ## Project Overview
-This project implements a MapReduce framework, designed for parallel and scalable processing of large datasets. The framework splits input data, processes it concurrently, and aggregates results efficiently.
+This project implements a MapReduce programming model,for parallel and scalable processing of large datasets. The framework splits input data, processes it concurrently, and aggregates results efficiently.
 
 ### **Tasks Implemented**
 1. **Letter Counter**: Counts the frequency of each letter in the input data.
@@ -18,6 +18,7 @@ This project implements a MapReduce framework, designed for parallel and scalabl
 - Intermediate Data Storage using temporary partition files (namely `partion-*.itm`).
 - Large Input Support by dividing data into configurable splits.
 - Robust Error Handling for file I/O, memory allocation, and process failures.
+- Customizable map and reduce functions to process diverse datasets.
 
 ---
 ## **Compilation**
@@ -52,7 +53,8 @@ Examples
 VS 
 - **8 Processes**
 ![Alt Text](images/img2.png)
-OUTPUT
+Executing on multiple processes isn't always beneficial, for example - small inputs because the overhead of process creation, I/O, and merging results outweighs the minimal computation time, making sequential execution faster.  <br>
+`Sometimes let one process shine, no backup dancers required :)`
 ```
 a:210858
 b:36749
